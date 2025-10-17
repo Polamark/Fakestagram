@@ -92,8 +92,8 @@ $posts = [$post1, $post2]
                     <span class="font-semibold"><?php echo $post['author']['name']; if ($post['author']['verified']) {echo '<i class="w-5 ml-1 mt-0.5 aspect-square text-sm text-blue-500 bi bi-patch-check-fill"></i>';};?> </span>
                     <?= $post['content'] ?>
                 </p>
-                <span class="text-gray-500 mt-2">View all <?php echo count($post['comments']) ?> comments</span>
-                <span class="text-gray-500 mt-0.5">Add a comment</span>
+                <span class="text-gray-500 mt-2 cursor-pointer">View all <?php echo count($post['comments']) ?> comments</span>
+                <span class="text-gray-500 mt-0.5 cursor-pointer">Add a comment</span>
             </article>
         <?php endforeach ?>
     </section>
