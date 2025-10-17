@@ -1,25 +1,43 @@
 <?php
 $author1 = [
     'name' => 'Parrot Lovers',
-    'pfp' => 'https://placehold.co/100x100',
+    'pfp' => 'https://as2.ftcdn.net/v2/jpg/01/09/39/73/1000_F_109397389_huBYRiES0sAHsYBHuo7XU9aRvD0I73if.jpg',
+    'verified' => false
+];
+$author2 = [
+    'name' => 'Wiener House',
+    'pfp' => 'https://images.ctfassets.net/qj2yxv39d6ig/6B3Ou63rVBu0N4Tr9MsM1b/25b8847b0febc4fb466948b13fb79940/Dachshund_1000.jpg',
     'verified' => true
 ];
 $authors = [
-  $author1
+    $author1,
+    $author2,
 ];
 $post1 = [
-    'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vitae maximus nunc, nec ornare justo. Aliquam posuere tristique augue id venenatis. Cras lobortis malesuada nibh eu rutrum. Pellentesque id posuere velit. Pellentesque eu consequat felis, eu rhoncus sapien. Etiam quis nisl turpis. Phasellus scelerisque odio massa, id pretium neque lacinia at. Suspendisse turpis ipsum, rhoncus quis porttitor vel, scelerisque non risus. Integer vel dolor ac mi aliquam volutpat ut et nunc. Proin dictum tortor leo, sed pellentesque risus vulputate interdum. Etiam efficitur risus et finibus rhoncus. Mauris ac lobortis nibh. Donec rutrum lectus pretium faucibus faucibus. In imperdiet sagittis nibh, quis aliquet eros egestas ac. Suspendisse potenti. Ut libero nisi, pellentesque a arcu et, accumsan posuere ex. In eget sapien quis mauris vestibulum dictum. Pellentesque in tincidunt massa, non venenatis elit. Donec lobortis ac magna aliquam sollicitudin. Donec dignissim id nisi sit amet rhoncus. Sed tristique arcu felis, non tempor nunc placerat dictum. Vestibulum facilisis orci rutrum nisl sollicitudin posuere. Morbi viverra faucibus est, ut commodo risus eleifend ut. Aliquam orci mi, pharetra id mi ut, porta egestas sapien. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse pulvinar ipsum id orci varius, in posuere eros fringilla. Praesent arcu mauris, sollicitudin eu condimentum eu, elementum scelerisque orci. Integer ac urna orci. Integer condimentum malesuada felis a gravida. Nulla ultricies cursus sem, vitae tincidunt eros. Nulla arcu lacus, efficitur sed accumsan a, ultrices sit amet quam. Sed ut nulla vitae mi hendrerit blandit. In sollicitudin nisl sed ultrices pretium. Sed vestibulum tristique sem eu dignissim. Phasellus molestie nisi quis sagittis semper. Nulla commodo a est eget dignissim. Praesent augue nisl, ornare vel faucibus in, sollicitudin non nisi. Morbi consectetur magna nec leo commodo tempor. Praesent nec rutrum enim, sit amet tincidunt lacus. Sed pulvinar commodo molestie. Integer mollis felis at tortor feugiat porttitor fringilla gravida ante. Nullam porta congue erat ut tincidunt. Nam posuere lacus faucibus mattis tempor. Praesent condimentum pharetra risus. Praesent tristique tincidunt odio a iaculis. Suspendisse mattis varius ipsum eu sodales. Integer ut felis eget urna hendrerit feugiat et eu turpis. Morbi imperdiet hendrerit neque in elementum. Nullam sem orci, luctus vitae libero sit amet, ultricies consequat sem. Vestibulum eu facilisis tortor. Vestibulum sit amet lacinia orci, commodo accumsan nisi. In ut cursus mi.',
+    'content' => 'A nice photo of this great parrot I took',
     'tags' => ['php', 'javascript'],
     'author' => $authors[0],
-    'location' => 'Somewhere in the world',
-    'postImg' => "post-photos/parrot.png",
-    'likes' => "100",
+    'location' => 'Amazon',
+    'postImg' => "https://img.freepik.com/free-photo/closeup-scarlet-macaw-from-side-view-scarlet-macaw-closeup-head_488145-3540.jpg?semt=ais_hybrid&w=740&q=80",
+    'likes' => "13,847",
     'comments' => [
         ['author' => 'John', 'content' => 'Great post!'],
         ['author' => 'Jane', 'content' => 'I love it!']
     ]
 ];
-$posts = [$post1, $post1]
+$post2 = [
+    'content' => 'Long dog',
+    'tags' => ['php', 'javascript'],
+    'author' => $authors[1],
+    'location' => '',
+    'postImg' => "https://www.thekennelclub.org.uk/media/2145/dachshund-smooth-haired-standing.jpg?rmode=pad&width=1000&v=1d5750bdf673270",
+    'likes' => "858,391",
+    'comments' => [
+        ['author' => 'John', 'content' => 'Great post!'],
+        ['author' => 'Jane', 'content' => 'I love it!']
+    ]
+];
+$posts = [$post1, $post2]
 ?>
 
 <!doctype html>
@@ -56,9 +74,9 @@ $posts = [$post1, $post1]
             <article class="flex flex-col w-full max-w-150 h-fit">
                 <div class="flex w-full items-center gap-3">
                     <img class="w-10 aspect-square rounded-full" src="<?= $post['author']['pfp'] ?>" alt="pfp">
-                    <div class="flex flex-col items-start justify-start">
+                    <div class="flex flex-col items-start justify-start h-full">
                         <span class="text-xl flex justify-center items-center font-medium"><?php echo $post['author']['name']; if ($post['author']['verified']) {echo '<i class="w-5 ml-1 mt-1 aspect-square text-lg text-blue-500 bi bi-patch-check-fill"></i>';};?> </span>
-                        <span class="text-sm -mt-1.5 text-gray-500"><?= $post['location']?></span>
+                        <?php if ($post['location']){ echo '<span class="text-sm -mt-1.5 text-gray-500">'.$post['location'] . '</span>';};?>
                     </div>
                     <i class="ml-auto my-auto text-2xl cursor-pointer bi bi-three-dots"></i>
                 </div>
@@ -74,6 +92,8 @@ $posts = [$post1, $post1]
                     <span class="font-semibold"><?php echo $post['author']['name']; if ($post['author']['verified']) {echo '<i class="w-5 ml-1 mt-0.5 aspect-square text-sm text-blue-500 bi bi-patch-check-fill"></i>';};?> </span>
                     <?= $post['content'] ?>
                 </p>
+                <span class="text-gray-500 mt-2">View all <?php echo count($post['comments']) ?> comments</span>
+                <span class="text-gray-500 mt-0.5">Add a comment</span>
             </article>
         <?php endforeach ?>
     </section>
