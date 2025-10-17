@@ -184,9 +184,6 @@
   .fixed {
     position: fixed;
   }
-  .sticky {
-    position: sticky;
-  }
   .top-0 {
     top: calc(var(--spacing) * 0);
   }
@@ -220,20 +217,11 @@
   .mt-auto {
     margin-top: auto;
   }
-  .-mr-2 {
-    margin-right: calc(var(--spacing) * -2);
-  }
   .ml-1 {
     margin-left: calc(var(--spacing) * 1);
   }
   .ml-auto {
     margin-left: auto;
-  }
-  .line-clamp-1 {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
   }
   .line-clamp-3 {
     overflow: hidden;
@@ -243,9 +231,6 @@
   }
   .flex {
     display: flex;
-  }
-  .inline-block {
-    display: inline-block;
   }
   .aspect-square {
     aspect-ratio: 1 / 1;
@@ -262,35 +247,14 @@
   .max-h-200 {
     max-height: calc(var(--spacing) * 200);
   }
-  .max-h-225 {
-    max-height: calc(var(--spacing) * 225);
-  }
-  .w-1\/4 {
-    width: calc(1/4 * 100%);
-  }
   .w-5 {
     width: calc(var(--spacing) * 5);
   }
   .w-10 {
     width: calc(var(--spacing) * 10);
   }
-  .w-40 {
-    width: calc(var(--spacing) * 40);
-  }
-  .w-50 {
-    width: calc(var(--spacing) * 50);
-  }
-  .w-60 {
-    width: calc(var(--spacing) * 60);
-  }
   .w-90 {
     width: calc(var(--spacing) * 90);
-  }
-  .w-100 {
-    width: calc(var(--spacing) * 100);
-  }
-  .w-120 {
-    width: calc(var(--spacing) * 120);
   }
   .w-full {
     width: 100%;
@@ -328,22 +292,11 @@
   .gap-4 {
     gap: calc(var(--spacing) * 4);
   }
-  .gap-10 {
-    gap: calc(var(--spacing) * 10);
-  }
   .gap-15 {
     gap: calc(var(--spacing) * 15);
   }
-  .truncate {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
   .overflow-x-clip {
     overflow-x: clip;
-  }
-  .overflow-y-clip {
-    overflow-y: clip;
   }
   .rounded-full {
     border-radius: calc(infinity * 1px);
@@ -360,15 +313,6 @@
     @supports (color: color-mix(in lab, red, red)) {
       border-color: color-mix(in oklab, var(--color-black) 25%, transparent);
     }
-  }
-  .border-black\/50 {
-    border-color: color-mix(in srgb, #000 50%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      border-color: color-mix(in oklab, var(--color-black) 50%, transparent);
-    }
-  }
-  .object-contain {
-    object-fit: contain;
   }
   .object-cover {
     object-fit: cover;

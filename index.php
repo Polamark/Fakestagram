@@ -75,7 +75,7 @@ $posts = [$post1, $post2]
                 <div class="flex w-full items-center gap-3">
                     <img class="w-10 aspect-square rounded-full" src="<?= $post['author']['pfp'] ?>" alt="pfp">
                     <div class="flex flex-col items-start justify-start h-full">
-                        <span class="text-xl flex justify-center items-center font-medium"><?php echo $post['author']['name']; if ($post['author']['verified']) {echo '<i class="w-5 ml-1 mt-1 aspect-square text-lg text-blue-500 bi bi-patch-check-fill"></i>';};?> </span>
+                        <span class="text-xl flex justify-center items-center font-medium"><?php echo $post['author']['name']; if ($post['author']['verified']) {echo '<i class="w-5 ml-1 mt-0.5 aspect-square text-lg text-blue-500 bi bi-patch-check-fill"></i>';};?> </span>
                         <?php if ($post['location']){ echo '<span class="text-sm -mt-1.5 text-gray-500">'.$post['location'] . '</span>';};?>
                     </div>
                     <i class="ml-auto my-auto text-2xl cursor-pointer bi bi-three-dots"></i>
