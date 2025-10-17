@@ -82,10 +82,10 @@ $posts = [$post1, $post2]
                 </div>
                 <img class="w-full mt-3 rounded-xs max-h-200 object-cover" src="<?= $post['postImg'] ?>" alt="post">
                 <div class="flex justify-start items-center gap-3 text-3xl mt-4">
-                    <i class="bi bi-heart"></i>
-                    <i class="bi bi-chat"></i>
-                    <i class="bi bi-send"></i>
-                    <i class="bi bi-bookmark ml-auto"></i>
+                    <i class="bi bi-heart cursor-pointer"></i>
+                    <i class="bi bi-chat cursor-pointer"></i>
+                    <i class="bi bi-send cursor-pointer"></i>
+                    <i class="bi bi-bookmark ml-auto cursor-pointer"></i>
                 </div>
                 <span class="text-lg font-semibold mt-2"><?= $post['likes']?> likes</span>
                 <p class="text-lg text-wrap line-clamp-3">
