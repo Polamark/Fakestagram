@@ -199,9 +199,6 @@
   .mt-0\.5 {
     margin-top: calc(var(--spacing) * 0.5);
   }
-  .mt-1 {
-    margin-top: calc(var(--spacing) * 1);
-  }
   .mt-2 {
     margin-top: calc(var(--spacing) * 2);
   }
@@ -374,6 +371,7 @@
 @layer components {
   .nav-item {
     display: flex;
+    cursor: pointer;
     align-items: center;
     justify-content: flex-start;
     gap: calc(var(--spacing) * 3);
